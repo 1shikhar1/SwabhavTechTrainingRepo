@@ -1,0 +1,31 @@
+
+table {
+    border: 8px solid rgb(149, 173, 102);
+    margin: 5px auto;
+}
+
+
+td {
+    width: 100px;
+    height: 100px;
+}
+
+
+
+.vert {
+    border: 8px solid #bfbfbf;
+}
+
+.hori {
+    border: 8px solid #bfbfbf;
+}
+
+h3 {
+    text-align: center;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+    color: #d4af0b;
+}

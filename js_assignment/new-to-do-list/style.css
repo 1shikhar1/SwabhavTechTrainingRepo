@@ -1,0 +1,67 @@
+body{
+    font-family:'Times New Roman', Times, serif;
+}
+
+.container #edit{
+    float: right;
+    border: 2px solid #222222;
+    background-color: rgb(0, 119, 255);
+    color:aliceblue;
+    margin: 0px 6px;
+    border-radius: 10px;
+}
+
+.container #delete{
+    float: right;
+    border: 2px solid #222222;
+    background-color: rgb(223, 39, 39);
+    color:aliceblue;
+    border-radius: 10px;
+}
+
+.container{
+    padding: 10px;
+    border: 1px solid #BCB9B8;
+    width: 40%;
+    margin: auto;
+}
+
+.container .input{
+    /* background-color:aliceblue;
+    width: 87%;
+    height: 40px; */
+    background-color:lightgray;
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: none;
+    height: 50px;
+    border-radius: 25px;
+    width: 80%;
+    /* margin: 0.25rem; */
+    transition: .5s;
+    font-size: 1.15rem;
+    margin: auto;
+}
+
+.container .btn{
+    background-color:#BCB9B8;
+    width: 50px;
+    height: 40px;
+    margin: auto;
+}
+
+
+
+.container li{
+    float:inline-end;
+    color: #000;
+    background-color:khaki;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.container #error {
+    color: red;
+    font-size: 14px;
+    /* margin: auto; */
+}

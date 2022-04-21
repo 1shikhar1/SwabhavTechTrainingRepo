@@ -1,0 +1,6 @@
+[
+    {"title": "Programming in java", "likes": 100},
+    {"title": "Programming in python", "likes": 200},
+    {"title": "Cooking", "likes": 300},
+    {"title": "How to write code", "likes": 150}
+]

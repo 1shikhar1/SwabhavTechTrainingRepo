@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>An Interesting Title Goes Here</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <script>
+            function showAlert(){
+                alert("foo");
+            }
+            setTimeout(showAlert, 1000);
+
+
+            function drawText() {
+                alert("foo");
+            }
+
+            var intervalID = setInterval(drawText, 2000);
+            clearInterval(intervalID);
+
+            function animationLoop() {
+                // animation-related code
+                alert("foo");
+                var rid = requestAnimationFrame(animationLoop);
+            }
+                // start off our animation loop!
+            animationLoop();
+
+            cancelAnimationFrame(rid);
+
+        </script>
+    </body>
+</html>
