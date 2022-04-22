@@ -1,10 +1,12 @@
 package com.monocept.model.test;
 
+import java.util.Iterator;
+
 import com.monocept.model.*;
 
 public class Test {
 	public static void main(String args[]) {
-		CustomLinkedList list = new CustomLinkedList();
+		CustomLinkedList<Integer> list = new CustomLinkedList();
 		
 		list.add(20);
 		list.add(30);
@@ -15,9 +17,15 @@ public class Test {
 		list.display();
 		list.remove(30);
 		System.out.println();
-
-		for(Node item: list) {
-			System.out.println(item.data);
+		
+		Iterator<Integer> itr = list.iterator();
+		
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
 		}
+
+//		for(Integer item: list) {
+//			System.out.println(item);
+//		}
 	}
 }

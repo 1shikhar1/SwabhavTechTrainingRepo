@@ -1,10 +1,12 @@
 package com.monocept.model;
 
-public class Node{
-	public int data;
-	public Node next = null;
+public class Node <T>{
 	
-	public Node(int data){
+	T data;
+	Node<T> next;
+	
+	public Node(T data) {
 		this.data = data;
 	}
+
 }

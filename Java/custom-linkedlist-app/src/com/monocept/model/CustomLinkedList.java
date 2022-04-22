@@ -2,12 +2,11 @@ package com.monocept.model;
 
 import java.util.Iterator;
 
-public class CustomLinkedList implements Iterable<Node> {
-	
+public class CustomLinkedList<T> {
 	Node head;
 	
-	public void add(int data) {
-		Node newNode = new Node(data);
+	public void add(T data) {
+		Node<T> newNode = new Node(data);
 		
 		if(head==null) {
 			head = newNode;
@@ -23,9 +22,10 @@ public class CustomLinkedList implements Iterable<Node> {
 		}
 		
 	}
+
 	
-	public void remove(int data) {
-		Node currNode = head, prev=null;
+	public void remove(T data) {
+		Node<T> currNode = head, prev=null;
 		
         if (currNode != null && currNode.data == data) {
             head = currNode.next; 
@@ -42,41 +42,39 @@ public class CustomLinkedList implements Iterable<Node> {
         }
 		
 	}
-	
+
 	public void display() {
-		Node temp = head;
-		
-		while(temp!=null) {
-			System.out.println(temp.data);
-			temp = temp.next;
+		Node node = head;
+		while (node!= null) {
+			System.out.println(node.data);
+			node = node.next;
 		}
 	}
 
-	@Override
-	public Iterator<Node> iterator() {
-		return new ListIterator(head);
+
+	public Iterator<T> iterator() {
+		return new ListIterator();
 	}
+
+  class ListIterator implements Iterator<T>{
+
+	  Node current = head;
+
+      @Override
+      public boolean hasNext() {
+          return current != null;
+      }
+
+      @Override
+      public T next() {
+          if(hasNext()){
+              T data = (T) current.data;
+              current = current.next;
+              return data;
+          }
+          return null;
+      }
+  }
 
 }
 
-class ListIterator implements Iterator<Node>{
-
-	private Node current;
-	
-	public ListIterator(Node head) {
-		current = head;
-	}
-	
-	@Override
-	public boolean hasNext() {
-		return current!=null;
-	}
-
-	@Override
-	public Node next() {
-		Node temp = current;
-		current = current.next;
-		return temp;
-	}
-	
-}
