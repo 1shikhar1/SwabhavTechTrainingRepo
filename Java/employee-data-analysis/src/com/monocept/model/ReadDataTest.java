@@ -1,5 +1,7 @@
 package com.monocept.model;
 
+// need to refactor this code
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -25,7 +27,7 @@ public class ReadDataTest {
 			
 		}).collect(Collectors.toSet());
 		
-		// find ceo
+		// find CEO
 		empList.stream().filter(emp -> emp.getJob().contains("PRESIDENT")).forEach(emp -> {
 			System.out.println(emp.getEmployeeName() + "       " + emp.getSalary());
 		});
