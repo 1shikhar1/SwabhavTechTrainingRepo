@@ -5,10 +5,10 @@ import java.sql.*;
 public class CrudOperation {
 
 	public static void main(String args[]) throws SQLException {
-		insertData(1,"Rohan");
-		insertData(2,"Rahul");
-		insertData(3,"Abhishek");
-		insertData(4,"Vineet");
+//		insertData(1,"Rohan");
+//		insertData(2,"Rahul");
+//		insertData(3,"Abhishek");
+//		insertData(4,"Vineet");
 		
 		updateData("Shikhar","where name= \"rahul\"");
 		viewData();

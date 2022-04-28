@@ -9,7 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 public class ViewMovies extends JFrame {
 	private JPanel contentPane;
-	private JTable table;
+	
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

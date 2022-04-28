@@ -36,7 +36,7 @@ public class AddMovie extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JLabel lblAddMovie = new JLabel("Add Librarian");
+		JLabel lblAddMovie = new JLabel("Add Movie");
 		lblAddMovie.setForeground(Color.DARK_GRAY);
 		lblAddMovie.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		
