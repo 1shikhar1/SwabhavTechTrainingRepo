@@ -1,6 +1,5 @@
 package com.monocept.model;
 
-
 import com.monocept.model.customexception.CellMarkedRuntimeException;
 
 public class Cell {

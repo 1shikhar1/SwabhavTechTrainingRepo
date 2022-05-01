@@ -40,7 +40,6 @@ public class AddMovie extends JFrame {
 		lblAddMovie.setForeground(Color.DARK_GRAY);
 		lblAddMovie.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		
-		
 		JLabel lblName = new JLabel("Name:");
 		JLabel lblGenre = new JLabel("Genre:");
 		JLabel lblYear = new JLabel("Year:");
@@ -54,7 +53,6 @@ public class AddMovie extends JFrame {
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
 		
-		
 		JButton btnNewButton = new JButton("Add Movie");
 		btnNewButton.setForeground(Color.DARK_GRAY);
 		
@@ -63,17 +61,6 @@ public class AddMovie extends JFrame {
 			String name=textField.getText();
 			String genre=textField_1.getText();
 			String year=textField_2.getText();
-
-//			int i=LibrarianDao.save(name, password, email, address, city, contact);
-//			if(i>0){
-//				JOptionPane.showMessageDialog(LibrarianForm.this,"Librarian added successfully!");
-//				AdminSuccess.main(new String[]{});
-//				frame.dispose();
-//				
-//			}else{
-//				JOptionPane.showMessageDialog(LibrarianForm.this,"Sorry, unable to save!");
-//			}
-			
 			
 			MovieStore store = new MovieStore();
 			
@@ -87,7 +74,6 @@ public class AddMovie extends JFrame {
 			}
 		});
 		
-		
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -95,9 +81,6 @@ public class AddMovie extends JFrame {
 			frame.dispose();
 			}
 		});
-		
-		
-		
 		
 		contentPane.add(lblName);
 		contentPane.add(textField);

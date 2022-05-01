@@ -1,8 +1,7 @@
-package com.monocept.model.test;
+package com.monocept.gui;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
 import javax.swing.*;
 
 import com.monocept.model.Board;
@@ -12,18 +11,20 @@ import com.monocept.model.Player;
 import com.monocept.model.Result;
 import com.monocept.model.ResultAnalyzer;
 
-public class TicTacToeGame implements ActionListener {
-
+public class TicTacToe implements ActionListener {
   
     JFrame frame = new JFrame();
-    JPanel t_panel = new JPanel();
-    JPanel bt_panel = new JPanel();
+    JPanel headerPanel = new JPanel();
+    JPanel btnPanel = new JPanel();
     JLabel textfield = new JLabel();
     JButton[] bton = new JButton[9];
     Game g;
+    String player1;
+    String player2;
     
-
-    TicTacToeGame() {
+    public TicTacToe(String player1, String player2) {
+    	this.player1 = player1;
+    	this.player2 = player2;
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 800);
@@ -39,30 +40,30 @@ public class TicTacToeGame implements ActionListener {
         textfield.setText("Tic Tac Toe");
         textfield.setOpaque(true);
 
-        t_panel.setLayout(new BorderLayout());
-        t_panel.setBounds(0, 0, 800, 100);
+        headerPanel.setLayout(new BorderLayout());
+        headerPanel.setBounds(0, 0, 800, 100);
 
-        bt_panel.setLayout(new GridLayout(3, 3));
-        bt_panel.setBackground(new Color(150, 150, 150));
+        btnPanel.setLayout(new GridLayout(3, 3));
+        btnPanel.setBackground(new Color(150, 150, 150));
 
         for (int i = 0; i < 9; i++) {
             bton[i] = new JButton();
-            bt_panel.add(bton[i]);
+            btnPanel.add(bton[i]);
             bton[i].setFont(new Font("Ink Free", Font.BOLD, 120));
             bton[i].setFocusable(false);
             bton[i].addActionListener(this);
         }
         
-        t_panel.add(textfield);
-        frame.add(t_panel, BorderLayout.NORTH);
-        frame.add(bt_panel);
+        headerPanel.add(textfield);
+        frame.add(headerPanel, BorderLayout.NORTH);
+        frame.add(btnPanel);
 
         startGame();
     }
     
-    public void startGame() {
+    private void startGame() {
         
-		Player players[] = {new Player("Rohan",Mark.O), new Player("Shikhar",Mark.X)};
+		Player players[] = {new Player(player1,Mark.O), new Player(player2,Mark.X)};
 		Board board = new Board();
 		ResultAnalyzer analyzer = new ResultAnalyzer(board); 
 		g = new Game(players,board,analyzer);
@@ -76,12 +77,11 @@ public class TicTacToeGame implements ActionListener {
         int n = JOptionPane.showOptionDialog(frame, "Game Over\n"+s,"Game Over",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,option,option[0]);
         if(n==0){
             frame.dispose();
-            new TicTacToeGame();
+            new TicTacToe(player1,player2);
         }
         else{
             frame.dispose();
         }
-    
     }
 
     public void winner() {
@@ -106,7 +106,6 @@ public class TicTacToeGame implements ActionListener {
                     
                     if(g.getCurrentPlayer().getMark()==Mark.X)
                     	bton[i].setForeground(new Color(255, 0, 0));
-                    
                     
                     g.play(i);
                     

@@ -51,8 +51,6 @@ public class Menu extends JFrame {
 			}
 		});
 		
-		
-		
 		JButton btnViewMovies = new JButton("View Movies");
 		btnViewMovies.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		contentPane.add(btnViewMovies);
@@ -63,8 +61,6 @@ public class Menu extends JFrame {
 //				new ViewMovies(store);
 			}
 		});
-		
-		
 		
 		JButton btnClearMovies = new JButton("Clear Movies");
 		btnClearMovies.setFont(new Font("Tahoma", Font.PLAIN, 15));

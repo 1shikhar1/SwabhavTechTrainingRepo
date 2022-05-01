@@ -10,7 +10,6 @@ import javax.swing.border.EmptyBorder;
 public class ViewMovies extends JFrame {
 	private JPanel contentPane;
 	
-	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -33,22 +32,11 @@ public class ViewMovies extends JFrame {
 		setContentPane(contentPane);
 		
 		String data=null;
-//		String column[]= null;
-		
 		MovieStore store = new MovieStore();
 		data = store.getMovies();
 		
-
-//		System.out.println(d);
-		
 		JLabel lblName = new JLabel(data);
-//		
 		contentPane.add(lblName);
 		
-		
-//		table = new JTable(data,column);
-//		JScrollPane sp=new JScrollPane(table);
-//		
-//		contentPane.add(sp, BorderLayout.CENTER);
 	}
 }
