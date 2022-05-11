@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"
     import="java.util.*"
     import="com.monocept.model.*"
+    import="com.monocept.model.dto.*"
     %>
 <!DOCTYPE html>
 <html>
@@ -16,14 +17,13 @@
 <body>
 
 <%
-	String name = (String) session. getAttribute( "name" );
-	String email = (String) session. getAttribute( "email" );
+	UserDto user =  (UserDto)session. getAttribute( "user" );
 	
-	if(name==null){
+	if(user==null){
 		out.println("<h2>Guest User!</h2><p>");
 	}
 	else{
-		out.println("<h2 id=\"user\">"+name+"("+email+")"+"</h2><p>");
+		out.println("<h2 id=\"user\">"+user.getName()+"("+user.getEmail()+")"+"</h2><p>");
 	}
 
 	List<Student> students = (List)request.getAttribute("students");

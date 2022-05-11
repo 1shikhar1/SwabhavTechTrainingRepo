@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.monocept.model.Student;
+import com.monocept.model.dto.UserDto;
 import com.monocept.service.StudentDatabaseService;
 import com.monocept.service.StudentService;
 
@@ -28,9 +29,9 @@ public class AddStudentController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		System.out.println("Inside add student controller do get");
 		HttpSession session = request.getSession();
-		String name = (String)session.getAttribute("name");
+		UserDto user = (UserDto)session.getAttribute("user");
 		
-		if(name==null) {
+		if(user==null) {
 			
 			response.sendRedirect("login");
 			

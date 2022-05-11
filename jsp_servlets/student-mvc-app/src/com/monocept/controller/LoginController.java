@@ -36,8 +36,7 @@ public class LoginController extends HttpServlet {
 		
 		if(userDto!=null) {
 			HttpSession session = request.getSession();
-		    session.setAttribute("name", userDto.getName());
-		    session.setAttribute("email", userDto.getEmail());
+		    session.setAttribute("user", userDto);
 			response.sendRedirect("home");
 		}
 		else {
