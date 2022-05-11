@@ -15,8 +15,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class GameStarter extends JFrame {
-	static GameStarter frame;
+public class PlayerSelection extends JFrame {
+	static PlayerSelection frame;
 	private JPanel contentPane;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -25,7 +25,7 @@ public class GameStarter extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frame = new GameStarter();
+					frame = new PlayerSelection();
 					frame.setVisible(true);
 					frame.setResizable(false);
 				} catch (Exception e) {
@@ -35,7 +35,7 @@ public class GameStarter extends JFrame {
 		});
 	}
 
-	public GameStarter() {
+	public PlayerSelection() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

@@ -1,18 +1,18 @@
 package com.monocept.model;
 
 public class Game {
-	Result result;
-	Player currentPlayer;
-	Player players[];
-	ResultAnalyzer resultAnalyzer;
-	Board board;
-	int flag;
+	private Result result;
+	private Player currentPlayer;
+	private Player players[];
+	private ResultAnalyzer resultAnalyzer;
+	private Board board;
+	private int playerSelector;
 	
 	public Game(Player players[], Board board, ResultAnalyzer resultAnalyzer) {
 		this.players = players;
 		this.board = board;
 		this.resultAnalyzer = resultAnalyzer;
-		flag = (int) Math.round(Math.random());
+		playerSelector = (int) Math.round(Math.random());
 	}
 	
 	public void play(int cellLocation) {
@@ -23,14 +23,14 @@ public class Game {
 		if(result == Result.WIN)
 			return;
 		
-		if(flag==0)
-			flag=1;
+		if(playerSelector==0)
+			playerSelector=1;
 		else
-			flag=0;
+			playerSelector=0;
 	}
 	
 	public Player getCurrentPlayer() {
-		return players[flag];
+		return players[playerSelector];
 	}
 	
 	public Result getStatus() {

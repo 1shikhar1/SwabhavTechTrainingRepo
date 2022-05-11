@@ -51,6 +51,7 @@ public class TicTacToe implements ActionListener {
             btnPanel.add(bton[i]);
             bton[i].setFont(new Font("Ink Free", Font.BOLD, 120));
             bton[i].setFocusable(false);
+            bton[i].setName(Integer.toString(i));
             bton[i].addActionListener(this);
         }
         
@@ -94,18 +95,18 @@ public class TicTacToe implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent e) {
-
-        for (int i = 0; i < 9; i++) {
-            if (e.getSource() == bton[i]) {
+    	
+    	JButton button = (JButton) e.getSource();
+    	int i = Integer.parseInt(button.getName());
                 
-                if (bton[i].getText() == "") {
-                    bton[i].setText(g.getCurrentPlayer().getMark().toString());
+                if (button.getText() == "") {
+                	button.setText(g.getCurrentPlayer().getMark().toString());
                     
                     if(g.getCurrentPlayer().getMark()==Mark.O)
-                    	bton[i].setForeground(new Color(0, 0, 255));
+                    	button.setForeground(new Color(0, 0, 255));
                     
                     if(g.getCurrentPlayer().getMark()==Mark.X)
-                    	bton[i].setForeground(new Color(255, 0, 0));
+                    	button.setForeground(new Color(255, 0, 0));
                     
                     g.play(i);
                     
@@ -117,8 +118,6 @@ public class TicTacToe implements ActionListener {
                         gameOver("Match Draw");
                     }
                     textfield.setText(g.getCurrentPlayer().getName().toString()+"("+g.getCurrentPlayer().getMark().toString()+") turn");
-                }
-            }
         }
     }
 
