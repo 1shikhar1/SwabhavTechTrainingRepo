@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form name="myform" action="Auth" onsubmit="return validateform()" method="get">
+        <!-- Email input -->
+        
+        <label for="form2Example1">Username</label>
+          <input type="name" name="username"  id="username" />
+          <p id="req1" style="color: red;"></p>
+          
+        <!-- Password input -->
+        <label for="form2Example2">Password</label>
+          <input type="password" name="userPassword"  />
+          <p id="req2" style="color: red;"></p>
+          
+        <!-- Submit button -->
+        <button type="submit" >Sign in</button>
+
+        </div>
+      </form>
+
+      <script>  
+
+        function validateform(){  
+        var name=document.myform.username.value;  
+        var password=document.myform.userPassword.value;  
+ 
+        if (name==null || name==""){  
+            const userReq = document.getElementById("req1");
+            userReq.innerHTML="Username is required";
+        //   alert("Name can't be blank");  
+          return false;  
+        }
+        
+        if(password.length<=0){  
+            const userReq = document.getElementById("req2");
+            userReq.innerHTML="password is required";
+        //   alert("Password must be at least 5 characters long.");  
+          return false;  
+          }  
+        }  
+        </script> 
+ 
+</body>
+</html>

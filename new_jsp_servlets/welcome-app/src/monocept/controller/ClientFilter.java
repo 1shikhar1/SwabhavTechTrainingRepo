@@ -32,9 +32,8 @@ public class ClientFilter implements Filter {
 	      System.out.println("IP "+ ipAddress + ", Time "+ new Date().toString());
 		// pass the request along the filter chain
 	      
-	      if(!ipAddress.equals("192.168.43.1")) {
-//	    	  chain.doFilter(request, response);
-	      }
+	      if(!ipAddress.equals("192.168.43.1"))
+	    	  chain.doFilter(request, response);
 	      else
 	    	  out.println("You are blocked!");
 	}
