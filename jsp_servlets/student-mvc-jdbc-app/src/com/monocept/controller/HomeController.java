@@ -32,7 +32,7 @@ public class HomeController extends HttpServlet {
 
 		request.setAttribute("students", result);
 
-		RequestDispatcher view = request.getRequestDispatcher("home.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("home2.jsp");
 		view.forward(request, response);
 	}
 

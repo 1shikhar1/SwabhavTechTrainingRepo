@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class UploadImage {
 	
 	public static void main(String args[]) throws SQLException, IOException {
-		retriveImage();
+		uploadImage();
 	}
 	
 	public static void retriveImage() throws SQLException, IOException {
@@ -39,7 +39,7 @@ public class UploadImage {
 		Connection conn = connectDB();
 		PreparedStatement pstmt = conn.prepareStatement("INSERT INTO img_strg VALUES(?, ?)");
 		
-		pstmt.setString(1, "image1");
+		pstmt.setInt(1, 2);
 		InputStream in = new FileInputStream("images/img1.jpg");
 		pstmt.setBlob(2, in);
 		pstmt.execute();

@@ -41,6 +41,18 @@ public class StudentService {
 		return students;
 	}
 	
+	public List<Student> getStudents(int start, int end) {
+		StudentRepository repo = StudentRepository.getInstance();
+		
+		try {
+			students = repo.getStudents(start,end);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return students;
+	}
+	
 	public void addStudent(Student student) {
 		StudentRepository repo = StudentRepository.getInstance();
 		

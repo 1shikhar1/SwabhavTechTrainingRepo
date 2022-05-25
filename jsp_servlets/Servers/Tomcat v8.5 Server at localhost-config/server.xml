@@ -152,7 +152,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="welcome-app" path="/welcome-app" reloadable="true" source="org.eclipse.jst.jee.server:welcome-app"/><Context docBase="new-student-mvc-app" path="/new-student-mvc-app" reloadable="true" source="org.eclipse.jst.jee.server:new-student-mvc-app"/><Context docBase="student-mvc-jdbc-app" path="/student-mvc-jdbc-app" reloadable="true" source="org.eclipse.jst.jee.server:student-mvc-jdbc-app"/></Host>
+      <Context docBase="welcome-app" path="/welcome-app" reloadable="true" source="org.eclipse.jst.jee.server:welcome-app"/><Context docBase="new-student-mvc-app" path="/new-student-mvc-app" reloadable="true" source="org.eclipse.jst.jee.server:new-student-mvc-app"/><Context docBase="student-mvc-jdbc-app" path="/student-mvc-jdbc-app" reloadable="true" source="org.eclipse.jst.jee.server:student-mvc-jdbc-app"/><Context docBase="image-upload-app" path="/image-upload-app" reloadable="true" source="org.eclipse.jst.jee.server:image-upload-app"/><Context docBase="image-upload-jdbc-app" path="/image-upload-jdbc-app" reloadable="true" source="org.eclipse.jst.jee.server:image-upload-jdbc-app"/></Host>
     </Engine>
   </Service>
 </Server>

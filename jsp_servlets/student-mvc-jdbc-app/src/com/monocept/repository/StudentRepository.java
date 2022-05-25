@@ -80,6 +80,42 @@ public class StudentRepository {
 		return students;
 	}
 	
+	public List<Student> getStudents(int start, int end) throws SQLException {
+		List<Student> students = new ArrayList<>();
+		
+	    Connection conn = null;
+	    conn = connectDB();
+	    
+	    String sql = "select * from students limit "+start+","+end;
+	    PreparedStatement p = conn.prepareStatement(sql);
+	    ResultSet rs = p.executeQuery();
+         
+        while (rs.next()) {
+
+            int rollNum = rs.getInt("rollno");
+            String fname = rs.getString("fname");
+            String lname = rs.getString("lname");
+            double cgpa = rs.getDouble("cgpa");
+            
+            String sql2 = "select t.name as course_name from (select * from courses INNER JOIN map ON courses.id=map.cid) t where t.sid="+rollNum;
+
+    	    PreparedStatement p2 = conn.prepareStatement(sql2);
+    	    ResultSet rs2 = p2.executeQuery();
+    	    
+    	    List<String> courses = new ArrayList<String>();
+    	    
+    	    while (rs2.next())
+    	    	courses.add(rs2.getString("course_name"));
+            
+    	    students.add(new Student(rollNum,fname,lname,cgpa,courses));
+            
+            
+        }
+		conn.close();
+		
+		return students;
+	}
+	
 	
 	public void addStudent(Student student) throws SQLException {
 	    Connection conn = null;

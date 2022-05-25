@@ -17,6 +17,7 @@ public class Test {
 		StudentService service = StudentService.getInstance(); 
 
 //		service.removeStudent("106");
+		System.out.println(service.getStudents(0,5).size());
 		
 	}
 }
